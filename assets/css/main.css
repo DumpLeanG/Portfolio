@@ -1,0 +1,135 @@
+@import url("../fonts/stylesheet.css");
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: "OpenRunde";
+  color: #f2f2f2;
+  font-weight: 500;
+}
+
+body {
+  background: #05060A;
+}
+
+h1, h2 {
+  font-family: "Pinnacle";
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+a {
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2CB764;
+  transition: 0.3s;
+}
+
+button, .button {
+  background: none;
+  border: 3px solid #f2f2f2;
+  padding: 20px 100px;
+  text-align: center;
+  outline: none;
+  font-family: "Pinnacle";
+  font-weight: 700;
+}
+
+button:hover, .button:hover {
+  border: 3px solid #2CB764;
+  transition: 0.3s;
+  background: #2CB764;
+  color: #f2f2f2;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+header {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu_logo_img path {
+  transition: 0.3s;
+}
+.menu_logo_img:hover path {
+  fill: #2CB764;
+  transition: 0.3s;
+}
+.menu_list {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+.menu_list_item_link {
+  font-family: "Pinnacle";
+  font-weight: 700;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.main_block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main_block_left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 617px;
+  gap: 20px;
+}
+.main_block_left_subtitle {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.main_block_right {
+  background: url(../images/Person.png), radial-gradient(50% 50% at 50% 50%, rgba(44, 58, 183, 0.5) 0%, rgba(5, 6, 10, 0) 100%);
+  width: 447px;
+  height: 447px;
+  border: 5px solid #f2f2f2;
+  border-radius: 50%;
+}
+.main_block_right_img {
+  border: 5px solid #f2f2f2;
+}
+.main_block_arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100px;
+}
+.main_block_arrow_img .path {
+  transition: 0.3s;
+}
+.main_block_arrow_img:hover .path {
+  fill: #2CB764;
+  transition: 0.3s;
+}/*# sourceMappingURL=main.css.map */
