@@ -102,6 +102,10 @@ header {
     }
 }
 
+main {
+    overflow: hidden;
+}
+
 .main {
     width: 100%;
     height: 100vh;
@@ -110,17 +114,19 @@ header {
     position: relative;
     &_block {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        position: relative;
+        gap: 40px;
         &_left {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            width: 617px;
+            width: 823px;
             gap: 20px;
             &_subtitle {
                 font-size: 32px;
                 margin-bottom: 20px;
+                font-family: "Pinnacle";
             }
         }
         &_right {
@@ -129,26 +135,226 @@ header {
             height: 447px;
             border: 5px solid $white;
             border-radius: 50%;
-            &_img {
-                border: 5px solid $white;
+        }
+    }
+    &_arrow {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 100px;
+        &_img {
+            .path {
+                transition: 0.3s;
             }
         }
-        &_arrow {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 100px;
-            &_img {
-                .path {
-                    transition: 0.3s;
-                }
+        &_img:hover{
+            .path {
+                fill: $green;
+                transition: 0.3s;
             }
-            &_img:hover{
-                .path {
-                    fill: $green;
-                    transition: 0.3s;
+        }
+    }
+    &_ellipse-1 {
+        top: -88px;
+        left: -142px;
+    }
+    &_ellipse-2 {
+        top: -127px;
+        left: -164px;
+    }
+    &_ellipse-3 {
+        top: -164px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &_ellipse-4 {
+        right: -145px;
+        top: 75%;
+        transform: translateY(-75%);
+    }
+    &_ellipse-5 {
+        right: -209px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &_ellipse-6 {
+        left: -131px;
+        bottom: 10px;
+    }
+    &_ellipse-7 {
+        left: -237px;
+        top: -442px;
+    }
+}
+
+.ellipse {
+    position: absolute;
+    z-index: -1;
+}
+
+.arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+    &_img {
+        .path {
+            transition: 0.3s;
+        }
+    }
+    &_img:hover{
+        .path {
+            fill: $green;
+            transition: 0.3s;
+        }
+    }
+}
+
+.switch {
+    position: relative;
+    &_block {
+        display: flex;
+        flex-direction: column;
+        border-right: 2px solid $white;
+        position: fixed;
+        top: 50%;
+        width: 81px;
+        align-items: flex-end;
+        transform: translateY(-50%);
+        z-index: 10;
+        &_element {
+            padding: 15px 10px;
+            font-family: "Pinnacle";
+            font-weight: 700;
+        }
+        &_border {
+            border-right: 2px solid $green;
+            height: 52px;
+            position: absolute;
+            right: -2px;
+        }
+    }
+}
+
+#switch-element0 {
+    color: $green;
+}
+
+.about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &_block {
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 40px;
+        &_left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 700px;;
+            gap: 20px;
+            &_txt {
+                width: 578px;
+            }
+        }
+        &_right {
+            width: 578px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            &_bar {
+                background: $white;
+                width: 100%;
+                display: flex;
+                &_txt {
+                    background: $green;
+                    padding: 5px 10px;
+                    width: 0px;
                 }
             }
         }
     }
+    &_ellipse-1 {
+        top: -88px;
+        left: -142px;
+    }
+    &_ellipse-2 {
+        top: -127px;
+        left: -164px;
+    }
+    &_ellipse-3 {
+        top: -164px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &_ellipse-4 {
+        right: -145px;
+        top: 75%;
+        transform: translateY(-75%);
+    }
+    &_ellipse-5 {
+        right: -209px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &_ellipse-6 {
+        left: -131px;
+        bottom: 10px;
+    }
+    &_ellipse-7 {
+        left: -237px;
+        top: -442px;
+    }
+}
+
+.projects {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &_block {
+        display: flex;
+        position: relative;
+        &_start {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 40px;
+            text-align: center;
+            &_txt {
+                width: 577px;
+            }
+        }
+    }
+    &_slider {
+        position: absolute;
+        display: flex;
+        bottom: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+        &_dot {
+            width: 20px;
+            height: 20px;
+            background: $white;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        &_dot:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+#slider_dot-1 {
+    background: $blue;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
