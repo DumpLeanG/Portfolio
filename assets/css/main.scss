@@ -51,6 +51,7 @@ button, .button {
     outline: none;
     font-family: "Pinnacle";
     font-weight: 700;
+    cursor: pointer;
 }
 
 button:hover, .button:hover {
@@ -77,6 +78,7 @@ input::placeholder, textarea::placeholder {
 
 .container {
     width: 1440px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -142,7 +144,6 @@ main {
             &_subtitle {
                 font-size: 32px;
                 margin-bottom: 20px;
-                font-family: "Pinnacle";
             }
         }
         &_right {
@@ -151,51 +152,40 @@ main {
             height: 447px;
             border: 5px solid $white;
             border-radius: 50%;
-        }
-    }
-    &_arrow {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 100px;
-        &_img {
-            .path {
-                transition: 0.3s;
-            }
-        }
-        &_img:hover{
-            .path {
-                fill: $green;
-                transition: 0.3s;
-            }
+            background-size: contain;
         }
     }
     &_ellipse-1 {
-        top: -88px;
-        left: -142px;
+        top: -8vh;
+        left: -7vw;
+        width: 17vw;
     }
     &_ellipse-2 {
-        top: -127px;
-        left: -164px;
+        top: -12vh;
+        left: -9vw;
+        width: 17vw;
     }
     &_ellipse-3 {
-        top: -164px;
+        top: -15vh;
         left: 50%;
         transform: translateX(-50%);
+        width: 17vw;
     }
     &_ellipse-4 {
-        right: -145px;
-        top: 75%;
-        transform: translateY(-75%);
+        right: -8vw;
+        top: 54vh;
+        width: 17vw;
     }
     &_ellipse-5 {
-        right: -209px;
+        right: -11vw;
         top: 50%;
         transform: translateY(-50%);
+        width: 33vw;
     }
     &_ellipse-6 {
-        left: -131px;
-        bottom: 10px;
+        left: -7vw;
+        bottom: 1vh;
+        width: 17vw;
     }
 }
 
@@ -244,11 +234,12 @@ main {
             height: 52px;
             position: absolute;
             right: -2px;
+            transition: 0.6s;
         }
     }
 }
 
-#switch-element0 {
+.active_element {
     color: $green;
 }
 
@@ -268,7 +259,7 @@ main {
             flex-direction: column;
             align-items: flex-start;
             width: 700px;;
-            gap: 20px;
+            gap: 40px;
             &_txt {
                 width: 578px;
             }
@@ -293,18 +284,19 @@ main {
         }
     }
     &_ellipse-1 {
-        left: -237px;
-        top: -442px;
+        left: -12vw;
+        top: -41vh;
+        width: 37vw;
     }
     &_ellipse-2 {
-        right: -164px;
-        top: 35%;
-        transform: translateY(-35%);
+        right: -9vw;
+        top: 24vh;
+        width: 17vw;
     }
     &_ellipse-3 {
-        right: -285px;
-        top: 85%;
-        transform: translateY(-85%);
+        right: -15vw;
+        top: 27vh;
+        width: 37vw;
     }
 }
 
@@ -408,17 +400,19 @@ main {
         }
     }
     &_ellipse-1 {
-        left: -274px;
-        top: -343px;
+        left: -14vw;
+        top: -32vh;
+        width: 33vw;
     }
     &_ellipse-2 {
-        right: -183px;
-        top: 60%;
-        transform: translateY(-60%);
+        right: -10vw;
+        top: 39vh;
+        width: 17vw;
     }
     &_ellipse-3 {
-        right: -247px;
-        top: 7%;
+        right: -13vw;
+        top: 6vh;
+        width: 33vw;
     }
 }
 
@@ -435,6 +429,7 @@ main {
     display: flex;
     align-items: center;
     position: relative;
+    text-align: center;
     &_form {
         display: flex;
         flex-direction: column;
@@ -453,26 +448,34 @@ main {
                 height: 146px;
             }
         }
+        &_btn {
+            width: 456px;
+        }
     }
     &_ellipse-1 {
-        left: -164px;
-        top: -236px;
+        left: -9vw;
+        top: -22vh;
+        width: 17vw;
     }
     &_ellipse-2 {
-        right: -180px;
-        top: 42%;
+        right: -9vw;
+        top: 42vh;
+        width: 17vw;
     }
     &_ellipse-3 {
-        right: -323px;
+        right: -17vw;
         top: 0;
+        width: 37vw;
     }
     &_ellipse-4 {
-        left: -142px;
+        left: -7vw;
         bottom: 0;
+        width: 17vw;
     }
     &_ellipse-5 {
-        left: -164px;
-        bottom: 3%;
+        left: -9vw;
+        bottom: 4vh;
+        width: 17vw;
     }
 }
 
@@ -499,5 +502,220 @@ footer {
     &_socials {
         display: flex;
         gap: 40px;
+    }
+}
+
+
+
+@media (min-width: 1200px) and (max-width: 1679px) {    
+    * {
+        font-size: 16px;
+    }
+    
+    .container {
+        max-width: 1120px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    button, .button {
+        padding: 15px 100px;
+    }
+
+    input, textarea {
+        padding: 15px;
+    }
+    
+    .main {
+        &_block {
+            &_left {
+                width: 637px;
+            }
+            &_right {
+                width: 335px;
+                height: 335px;
+            }
+        }
+    }
+    
+    .switch {
+        &_block {
+            width: 57px;
+        }
+    }
+    
+    .about {
+        &_block {
+            &_left {
+                width: 540px;
+                &_txt {
+                    width: 540px;
+                }
+            }
+            &_right {
+                width: 443px;
+            }
+        }
+    }
+    
+    .projects {
+        &_block {
+            &_start {
+                &_txt {
+                    width: 540px;
+                }
+            }
+            &_item {
+                &_left {
+                    width: 637px;
+                }
+                &_right {
+                    &_img {
+                        width: 345px;
+                        height: 345px;
+                    }
+                    &_img-v2 {
+                        width: 345px;
+                        height: 345px;
+                        //удалить потом
+                    }
+                }
+            }
+        }
+    }
+    
+    .contact {
+        &_form {
+            &_elements {
+                &_input {
+                    width: 314px;
+                }
+                &_textarea {
+                    width: 314px;
+                    resize: none;
+                    height: 126px;
+                }
+            }
+            &_btn {
+                width: 346px;
+                padding: 15px 50px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {    
+    * {
+        font-size: 16px;
+    }
+    
+    .container {
+        max-width: 738px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    button, .button {
+        padding: 15px 100px;
+    }
+
+    input, textarea {
+        padding: 15px;
+    }
+    
+    .main {
+        &_block {
+            flex-direction: column-reverse;
+            &_left {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+            &_right {
+                width: 339px;
+                height: 339px;
+            }
+        }
+        &_arrow {
+            display: none;
+        }
+    }
+    
+    .switch {
+        display: none;
+    }
+    
+    .about {
+        &_block {
+            flex-direction: column;
+            &_left {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                &_txt {
+                    width: 100%;
+                }
+            }
+            &_right {
+                width: 100%;
+            }
+        }
+    }
+    
+    .projects {
+        &_block {
+            &_start {
+                &_txt {
+                    width: 540px;
+                }
+            }
+            &_item {
+                &_left {
+                    width: 637px;
+                }
+                &_right {
+                    &_img {
+                        width: 345px;
+                        height: 345px;
+                    }
+                    &_img-v2 {
+                        width: 345px;
+                        height: 345px;
+                        //удалить потом
+                    }
+                }
+            }
+        }
+    }
+    
+    .contact {
+        &_form {
+            &_elements {
+                &_input {
+                    width: 314px;
+                }
+                &_textarea {
+                    width: 314px;
+                    resize: none;
+                    height: 126px;
+                }
+            }
+            &_btn {
+                width: 346px;
+                padding: 15px 50px;
+            }
+        }
     }
 }
