@@ -90,35 +90,107 @@ header {
     z-index: 10;
 }
 
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &_logo {
-        &_img {
-            path {
-                transition: 0.3s;
-            }
-        }
-        &_img:hover {
-            path {
-                fill: $green;
-                transition: 0.3s;
-            }
-        }
-    }
-    &_list {
+bold {
+    font-weight: 700;
+}
+
+.header_block {
+    &_menu {
+        width: 100%;
         display: flex;
-        gap: 40px;
-        list-style: none;
-        &_item {
-            &_link {
-                font-family: "Pinnacle";
-                font-weight: 700;
+        justify-content: space-between;
+        align-items: center;
+        &_logo {
+            z-index: 1;
+            &_img {
+                path {
+                    transition: 0.3s;
+                }
+            }
+            &_img:hover {
+                path {
+                    fill: $green;
+                    transition: 0.3s;
+                }
+            }
+        }
+        &_list {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            &_item {
+                &_link {
+                    font-family: "Pinnacle";
+                    font-weight: 700;
+                }
+            }
+        }
+        &_burger {
+            display: none;
+            width: 30px;
+            height: 22px;
+            background: url(../images/burger.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 1;
+        }
+        &_close {
+            display: none;
+            width: 22px;
+            height: 22px;
+            background: url(../images/cross.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 1;
+        }
+        &_mobile {
+            display: none;
+            left: 0;
+            top: -15px;
+            background: $black;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            align-items: center;
+            justify-content: center;
+            transition: transform .3s ease, opacity .3s ease;
+            transform: translateY(-100%);
+            opacity: 0;
+            overflow: hidden;
+            &_list {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                position: fixed;
+                list-style: none;
+                &_item {
+                    &_link {
+                        font-size: 36px;
+                        font-family: "Pinnacle";
+                        transition: 0.3s;
+                    }
+                }
+                &_item:hover {
+                    color: $green;
+                    transition: 0.3s;
+                }
+            }
+            &-active {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
     }
 }
+
+@keyframes showBurger {
+    // Сразу описываем конечное состояние, так как начальное мы уже определили выше.
+      100% {
+        opacity: 1; // Делаем снова непрозрачным.
+        transform: translateY(0); // И возвращаем на место
+      }
+    }
+
 
 main {
     overflow: hidden;
@@ -598,7 +670,6 @@ footer {
                 }
                 &_textarea {
                     width: 314px;
-                    resize: none;
                     height: 126px;
                 }
             }
@@ -648,8 +719,41 @@ footer {
                 height: 339px;
             }
         }
-        &_arrow {
-            display: none;
+        &_arrow > .arrow_img {
+            width: 0;
+            height: 0;
+        }
+        &_ellipse-1 {
+            top: calc(-8vh*0.8);
+            left: calc(-7vw*2);
+            width: calc(17vw*2);
+        }
+        &_ellipse-2 {
+            top: calc(-12vh*0.8);
+            left: calc(-9vw*2);
+            width: calc(17vw*2);
+        }
+        &_ellipse-3 {
+            top: calc(-15vh*0.8);
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(17vw*2);
+        }
+        &_ellipse-4 {
+            right: calc(-8vw*2);
+            top: calc(54vh*0.8);
+            width: calc(17vw*2);
+        }
+        &_ellipse-5 {
+            right: calc(-11vw*2);
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc(33vw*2);
+        }
+        &_ellipse-6 {
+            left: calc(-7vw*2);
+            bottom: calc(1vh*0.8);
+            width: calc(17vw*2);
         }
     }
     
@@ -672,18 +776,39 @@ footer {
                 width: 100%;
             }
         }
+        &_ellipse-1 {
+            left: calc(-12vw*2);
+            top: calc(-41vh*0.8);
+            width: calc(37vw*2);
+        }
+        &_ellipse-2 {
+            right: calc(-9vw*2);
+            top: calc(24vh*0.8);
+            width: calc(17vw*2);
+        }
+        &_ellipse-3 {
+            right: calc(-15vw*2);
+            top: calc(27vh*0.8);
+            width: calc(37vw*2);
+        }
     }
     
     .projects {
         &_block {
             &_start {
                 &_txt {
-                    width: 540px;
+                    width: 478px;
                 }
             }
             &_item {
                 &_left {
-                    width: 637px;
+                    width: 345px;
+                    &_buttons {
+                        &_btn {
+                            padding: 15px 85px;
+                            width: 100%;
+                        }
+                    }
                 }
                 &_right {
                     &_img {
@@ -698,24 +823,338 @@ footer {
                 }
             }
         }
+        &_ellipse-1 {
+            left: calc(-14vw*2);
+            top: calc(-32vh*0.8);
+            width: calc(33vw*2);
+        }
+        &_ellipse-2 {
+            right: calc(-10vw*2);
+            top: calc(39vh*0.8);
+            width: calc(17vw*2);
+        }
+        &_ellipse-3 {
+            right: calc(-13vw*2);
+            top: calc(6vh*0.8);
+            width: calc(33vw*2);
+        }
     }
     
     .contact {
         &_form {
             &_elements {
                 &_input {
-                    width: 314px;
+                    width: 313px;
                 }
                 &_textarea {
-                    width: 314px;
-                    resize: none;
+                    width: 313px;
                     height: 126px;
                 }
             }
             &_btn {
-                width: 346px;
+                width: 345px;
                 padding: 15px 50px;
             }
+        }
+        &_ellipse-1 {
+            left: calc(-9vw*2);
+            top: calc(-22vh*0.8);
+            width: calc(17vw*2);
+        }
+        &_ellipse-2 {
+            right: calc(-9vw*2);
+            top: calc(42vh*0.8);
+            width: calc(17vw*2);
+        }
+        &_ellipse-3 {
+            right: calc(-17vw*2);
+            top: 0;
+            width: calc(37vw*2);
+        }
+        &_ellipse-4 {
+            left: calc(-7vw*2);
+            bottom: 0;
+            width: calc(17vw*2);
+        }
+        &_ellipse-5 {
+            left: calc(-9vw*2);
+            bottom: calc(4vh*0.8);
+            width: calc(17vw*2);
+        }
+    }
+
+    .footer {
+        &_copyright {
+            width: 260px;
+        }
+    }
+}
+
+@media (max-width: 767px) {    
+    * {
+        font-size: 14px;
+    }
+    
+    .container {
+        width: calc(100vw - 30px);
+        padding: 0 15px;
+    }
+
+    header {
+        top: 15px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    button, .button {
+        padding: 15px 70px;
+    }
+
+    input, textarea {
+        padding: 15px;
+    }
+
+    .header_block {
+        &_menu {
+            &_logo {
+                height: 23px;
+                svg {
+                    height: 23px;
+                    width: auto;
+                }
+            }
+            &_mobile {
+                display: flex;
+            }
+            &_list {
+                display: none;
+            }
+            &_burger {
+                display: block;
+            }
+        }
+    }
+    
+    .main {
+        &_block {
+            flex-direction: column-reverse;
+            gap: 20px;
+            &_left {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+                &_subtitle {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+            }
+            &_right {
+                width: 260px;
+                height: 260px;
+            }
+        }
+        &_arrow > .arrow_img {
+            width: 0;
+            height: 0;
+        }
+        &_ellipse-1 {
+            top: calc(-8vh*0.8);
+            left: calc(-7vw*2);
+            width: calc(17vw*2);
+        }
+        &_ellipse-2 {
+            top: calc(-12vh*0.8);
+            left: calc(-9vw*2);
+            width: calc(17vw*2);
+        }
+        &_ellipse-3 {
+            top: calc(-15vh*0.8);
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(17vw*2);
+        }
+        &_ellipse-4 {
+            right: calc(-8vw*2);
+            top: calc(54vh*0.8);
+            width: calc(17vw*2);
+        }
+        &_ellipse-5 {
+            right: calc(-11vw*2);
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc(33vw*2);
+        }
+        &_ellipse-6 {
+            left: calc(-7vw*2);
+            bottom: calc(1vh*0.8);
+            width: calc(17vw*2);
+        }
+    }
+
+    .arrow {
+        display: none;
+    }
+    
+    .switch {
+        display: none;
+    }
+    
+    .about {
+        &_block {
+            flex-direction: column;
+            gap: 20px;
+            &_left {
+                gap: 20px;
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                &_txt {
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+            &_right {
+                width: 100%;
+                gap: 10px;
+                &_bar {
+                    &_txt {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        &_ellipse-1 {
+            left: calc(-12vw*2);
+            top: calc(-41vh*0.8);
+            width: calc(37vw*2);
+        }
+        &_ellipse-2 {
+            right: calc(-9vw*2);
+            top: calc(24vh*0.8);
+            width: calc(17vw*2);
+        }
+        &_ellipse-3 {
+            right: calc(-15vw*2);
+            top: calc(27vh*0.8);
+            width: calc(37vw*2);
+        }
+    }
+    
+    .projects {
+        &_block {
+            &_start {
+                &_txt {
+                    width: 100%;
+                }
+            }
+            &_item {
+                flex-direction: column-reverse;
+                gap: 20px;
+                &_left {
+                    gap: 20px;
+                    width: 100%;
+                    &_buttons {
+                        &_btn {
+                            width: 100%;
+                        }
+                    }
+                }
+                &_right {
+                    &_img {
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: 1/1;
+                    }
+                    &_img-v2 {
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: 1/1;
+                        //удалить потом
+                    }
+                }
+            }
+        }
+        &_slider {
+            bottom: 10px;
+        }
+        &_ellipse-1 {
+            left: calc(-14vw*2);
+            top: calc(-32vh*0.8);
+            width: calc(33vw*2);
+        }
+        &_ellipse-2 {
+            right: calc(-10vw*2);
+            top: calc(39vh*0.8);
+            width: calc(17vw*2);
+        }
+        &_ellipse-3 {
+            right: calc(-13vw*2);
+            top: calc(6vh*0.8);
+            width: calc(33vw*2);
+        }
+    }
+    
+    .contact {
+        &_form {
+            gap: 20px;
+            &_elements {
+                gap: 10px;
+                width: 100%;
+                &_input {
+                    width: auto;
+                }
+                &_textarea {
+                    width: auto;
+                    height: 126px;
+                }
+            }
+            &_btn {
+                width: 100%;
+                padding: 15px 50px;
+            }
+        }
+        &_ellipse-1 {
+            left: calc(-9vw*2);
+            top: calc(-22vh*0.8);
+            width: calc(17vw*2);
+        }
+        &_ellipse-2 {
+            right: calc(-9vw*2);
+            top: calc(42vh*0.8);
+            width: calc(17vw*2);
+        }
+        &_ellipse-3 {
+            right: calc(-17vw*2);
+            top: 0;
+            width: calc(37vw*2);
+        }
+        &_ellipse-4 {
+            left: calc(-7vw*2);
+            bottom: 0;
+            width: calc(17vw*2);
+        }
+        &_ellipse-5 {
+            left: calc(-9vw*2);
+            bottom: calc(4vh*0.8);
+            width: calc(17vw*2);
+        }
+    }
+
+    .footer {
+        position: relative;
+        flex-direction: column-reverse;
+        padding: 15px;
+        gap: 20px;
+        text-align: center;
+        &_copyright {
+            width: 100%;
         }
     }
 }
