@@ -829,9 +829,6 @@ footer {
   .header_block_menu_list {
     display: none;
   }
-  .header_block_menu_burger {
-    display: block;
-  }
   .main_block {
     flex-direction: column-reverse;
     gap: 20px;

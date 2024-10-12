@@ -9,13 +9,13 @@ const illustratorBar = document.getElementById('illustrator_bar');
 
 window.addEventListener('scroll', () => {
     if(scrollY > document.documentElement.clientHeight * 0.5) {
-        cssBar.style.width = '360px';
-        htmlBar.style.width = '443px';
-        jsBar.style.width = '360px';
-        reactBar.style.width = '73px';
-        nodeBar.style.width = '73px';
-        phpBar.style.width = '73px';
-        figmaBar.style.width = '197px';
-        illustratorBar.style.width = '197px';
+        cssBar.style.width = '62%';
+        htmlBar.style.width = '77%';
+        jsBar.style.width = '62%';
+        reactBar.style.width = '13%';
+        nodeBar.style.width = '13%';
+        phpBar.style.width = '13%';
+        figmaBar.style.width = '34%';
+        illustratorBar.style.width = '34%';
     }
 });
